@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carter Brinkley Consulting | C. Shawn Brinkley</title>
+<meta name="description" content="AI strategy, data architecture, and enterprise delivery in regulated industries. Carter Brinkley Consulting LLC, founded by Shawn Brinkley.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-light: #243558;
+    --emerald: #00A86B;
+    --emerald-hover: #00C47D;
+    --matrix: #00FF41;
+    --gold: #C5A55A;
+    --white: #FFFFFF;
+    --off-white: #F7F8F6;
+    --text: #1A1A1A;
+    --text-light: #555555;
+    --text-on-dark: #C8CCD4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--navy);
+    padding: 14px 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  nav .nav-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .nav-brand {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+  nav .nav-brand span { color: var(--emerald); }
+  nav .nav-links a {
+    color: var(--text-on-dark);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 28px;
+    transition: color 0.2s;
+    letter-spacing: 0.01em;
+  }
+  nav .nav-links a:hover { color: var(--emerald); }
+
+  /* ---- SECTIONS ---- */
+  section { padding: 100px 32px; }
+  .container { max-width: 1080px; margin: 0 auto; }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: var(--navy);
+    padding: 180px 32px 120px;
+    text-align: left;
+  }
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .hero .tagline {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--emerald);
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+  }
+  .hero .intro {
+    font-size: 17px;
+    color: var(--text-on-dark);
+    max-width: 680px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .hero .cta-row {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .hero .cta-row a {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+    letter-spacing: 0.01em;
+  }
+  .hero .cta-primary {
+    background: var(--emerald);
+    color: var(--white);
+  }
+  .hero .cta-primary:hover { background: var(--emerald-hover); }
+  .hero .cta-secondary {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--white);
+  }
+  .hero .cta-secondary:hover { border-color: var(--emerald); color: var(--emerald); }
+
+  /* ---- ABOUT ---- */
+  .about { background: var(--white); }
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--emerald);
+    margin-bottom: 20px;
+  }
+  .about h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .about p {
+    font-size: 16px;
+    color: var(--text-light);
+    max-width: 760px;
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+
+  /* ---- SERVICES ---- */
+  .services { background: var(--off-white); }
+  .services h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 48px;
+    letter-spacing: -0.01em;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .service-card {
+    padding: 32px;
+    background: var(--white);
+    border-radius: 6px;
+    border: 1px solid #E8E8E8;
+    transition: border-color 0.2s;
+  }
+  .service-card:hover { border-color: var(--emerald); }
+  .service-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .service-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  .service-card .service-icon {
+    display: inline-block;
+    width: 36px;
+    height: 4px;
+    background: var(--emerald);
+    border-radius: 2px;
+    margin-bottom: 18px;
+  }
+
+  /* ---- PORTFOLIO ---- */
+  .portfolio { background: var(--navy); }
+  .portfolio .section-label { color: var(--emerald); }
+  .portfolio h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .portfolio .portfolio-intro {
+    font-size: 15px;
+    color: var(--text-on-dark);
+    max-width: 680px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+  .repo-card {
+    padding: 28px 32px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    transition: border-color 0.2s;
+  }
+  .repo-card:hover { border-color: var(--emerald); }
+  .repo-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--matrix);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .repo-desc {
+    font-size: 14px;
+    color: var(--text-on-dark);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .repo-metric {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 500;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .repo-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--emerald);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .repo-link:hover { color: var(--emerald-hover); }
+
+  /* ---- CREDENTIALS ---- */
+  .credentials { background: var(--white); }
+  .credentials h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .cred-item {
+    font-size: 15px;
+    color: var(--text);
+    padding: 16px 0;
+    border-bottom: 1px solid #E8E8E8;
+  }
+  .cred-item .cred-title { font-weight: 600; color: var(--navy); }
+  .cred-item .cred-org { font-weight: 300; color: var(--text-light); font-size: 14px; }
+
+  /* ---- CONTACT ---- */
+  .contact { background: var(--off-white); }
+  .contact h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .contact .contact-intro {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 36px;
+    max-width: 560px;
+  }
+  .contact-links {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .contact-link {
+    font-size: 15px;
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 14px 24px;
+    border: 1px solid #D0D0D0;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .contact-link:hover {
+    border-color: var(--emerald);
+    color: var(--emerald);
+  }
+  .contact-link .link-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--navy);
+    padding: 40px 32px;
+    text-align: center;
+  }
+  footer p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ---- DIVIDER ---- */
+  .gold-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin: 32px 0;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 768px) {
+    .hero { padding: 140px 24px 80px; }
+    .hero h1 { font-size: 32px; }
+    .hero .tagline { font-size: 18px; }
+    section { padding: 64px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .cred-grid { grid-template-columns: 1fr; }
+    .repo-card { flex-direction: column; }
+    .repo-metric { white-space: normal; }
+    .contact-links { flex-direction: column; }
+    nav .nav-links a { margin-left: 16px; font-size: 12px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">Carter <span>Brinkley</span> Consulting</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>C. Shawn Brinkley</h1>
+    <div class="tagline">Builder. Leader. Bridge.</div>
+    <p class="intro">
+      I build AI systems, lead the teams that deliver them, and translate between
+      the people who build the technology and the people who need to trust it.
+      More than 30 years across healthcare technology, FinTech, applied ML/AI strategy,
+      data architecture, and enterprise delivery in regulated environments.
+    </p>
+    <div class="cta-row">
+      <a href="#portfolio" class="cta-primary">View Portfolio</a>
+      <a href="#contact" class="cta-secondary">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <h2>Leader. Architect. Trusted Advisor.</h2>
+    <p>
+      Technical architecture, organizational delivery, and stakeholder alignment in
+      regulated environments. I have led engineering organizations, stood up operating
+      models, navigated model risk governance, and shipped production ML tools across
+      regulated financial institutions. I have also sat across from C-Suite and risk
+      officers to explain why the work matters in language that drives decisions.
+    </p>
+    <div class="gold-divider"></div>
+    <p>
+      My career began in healthcare, providing holmium and lithotripsy lasers to
+      surgeons in operating rooms, building
+      one of the earliest web-enabled mobile CT imaging platforms before cloud
+      computing existed, and working alongside hospital operations before transitioning into
+      enterprise technology and leadership. Over the next 25 years I led AI, machine learning,
+      engineering, and technology strategy in highly regulated industries including the
+      Federal Reserve and Capital One before founding Carter Brinkley Consulting.
+    </p>
+    <p>
+      I build systems with architectural discipline, evaluation rigor, and awareness
+      of what regulated environments demand. My development approach is AI-assisted.
+      I drive architecture and design decisions, AI accelerates the implementation, and
+      I own the understanding. Every system built includes evaluation from Day 1,
+      not as an afterthought.
+    </p>
+    <p>
+      Most engineering leaders are credible in the engineering room. Business
+      consultants are credible with company stakeholders. Governance professionals
+      understand policy. I'm across all three.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label">Services</div>
+    <h2>What I Do</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3>AI Strategy and Advisory</h3>
+        <p>
+          Technology vision, AI/ML roadmaps, and strategic planning for
+          executive leadership. Organizational operating models for AI adoption
+          and advancement in regulated industries.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3>Data Architecture and Integration</h3>
+        <p>
+          Data and application integration audits, data flow mapping, and
+          architectural assessments with current-state findings and
+          future-state recommendations.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3>Enterprise Delivery Leadership</h3>
+        <p>
+          PMO scaffolding, program strategy, portfolio management, and
+          metrics-driven tracking for technology organizations. From discovery
+          through delivery.
+        </p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3>Agentic AI Solutions</h3>
+        <p>
+          Production-patterned AI systems: retrieval pipelines, document intelligence,
+          multi-agent orchestration, AI governance as architecture, and
+          provider-agnostic model integration.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-label">Technical Portfolio</div>
+    <h2>What I've Built</h2>
+    <p class="portfolio-intro">
+      Five public repositories demonstrating hands-on AI/ML engineering alongside
+      leadership experience. All systems include evaluation from Day 1, no framework
+      dependency, and AI governance as a first-class architectural concern.
+    </p>
+    <div class="portfolio-grid">
+
+      <div class="repo-card">
+        <div>
+          <div class="repo-name">rag-pipeline</div>
+          <div class="repo-desc">
+            Multi-agent RAG with retrieval, grounded generation, dual-mode evaluation,
+            and built-in governance: prompt injection detection, PII redaction, autonomy
+            tiers, token budgets, and structured audit logging.
+          </div>
+          <a href="https://github.com/Brinkv3/rag-pipeline" class="repo-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="repo-metric">97% retrieval<br>99% faithfulness</div>
+      </div>
+
+      <div class="repo-card">
+        <div>
+          <div class="repo-name">doc-intelligence</div>
+          <div class="repo-desc">
+            Schema-driven document classification, structured field extraction,
+            validation, and cross-document analysis. Adding a new document type
+            means adding a JSON file, not writing new code.
+          </div>
+          <a href="https://github.com/Brinkv3/doc-intelligence" class="repo-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="repo-metric">100% classification<br>100% extraction</div>
+      </div>
+
+      <div class="repo-card">
+        <div>
+          <div class="repo-name">consulting-mcp-server</div>
+          <div class="repo-desc">
+            MCP server exposing both pipelines as 8 tools consumable by any
+            MCP-compatible AI client. Protocol-level interoperability tying
+            multiple AI capabilities into a single composable surface.
+          </div>
+          <a href="https://github.com/Brinkv3/consulting-mcp-server" class="repo-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="repo-metric">8 tools<br>25 tests</div>
+      </div>
+
+      <div class="repo-card">
+        <div>
+          <div class="repo-name">agentic-audit</div>
+          <div class="repo-desc">
+            End-to-end agentic workflow automating the consulting data audit
+            discovery process. Interview question generation through answer
+            synthesis with factual vs anecdotal classification.
+          </div>
+          <a href="https://github.com/Brinkv3/agentic-audit" class="repo-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="repo-metric">6 agents<br>full pipeline</div>
+      </div>
+
+      <div class="repo-card">
+        <div>
+          <div class="repo-name">llm-adapter</div>
+          <div class="repo-desc">
+            Provider-agnostic LLM abstraction layer. Swap providers by changing
+            one line in a config file. Supports Anthropic, OpenAI, Azure,
+            Bedrock, and local models.
+          </div>
+          <a href="https://github.com/Brinkv3/llm-adapter" class="repo-link" target="_blank">View on GitHub →</a>
+        </div>
+        <div class="repo-metric">5 providers<br>pip-installable</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials" id="credentials">
+  <div class="container">
+    <div class="section-label">Credentials</div>
+    <h2>Education and Certifications</h2>
+    <div class="cred-grid">
+      <div class="cred-item">
+        <div class="cred-title">Executive Certificate, Machine Learning in Business</div>
+        <div class="cred-org">Massachusetts Institute of Technology (MIT)</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-title">BS, Computer and Information Systems (Information Security)</div>
+        <div class="cred-org">Strayer University</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-title">Project Management Professional (PMP)</div>
+        <div class="cred-org">Project Management Institute</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-title">ITIL Certified</div>
+        <div class="cred-org">IT Service Management</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <h2>Let's Talk</h2>
+    <p class="contact-intro">
+      Based in Richmond, VA. Available for consulting engagements, advisory work,
+      and leadership opportunities in AI/ML engineering.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:shawn@cbrinkley.com" class="contact-link">
+        <span class="link-label">Email</span>
+        shawn@cbrinkley.com
+      </a>
+      <a href="https://linkedin.com/in/shawn-brinkley" class="contact-link" target="_blank">
+        <span class="link-label">LinkedIn</span>
+        linkedin.com/in/shawn-brinkley
+      </a>
+      <a href="https://github.com/Brinkv3" class="contact-link" target="_blank">
+        <span class="link-label">GitHub</span>
+        github.com/Brinkv3
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Carter Brinkley Consulting LLC | Richmond, VA</p>
+</footer>
+
+</body>
+</html>
